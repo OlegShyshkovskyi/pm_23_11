@@ -1,61 +1,67 @@
-const gulp = require('gulp');
-const sass = require('gulp-sass');
-const autoprefixer = require('gulp-autoprefixer');
-const cleanCSS = require('gulp-clean-css');
-const uglify = require('gulp-uglify');
-const rename = require('gulp-rename');
-const del = require('del');
-const browserSync = require('browser-sync').create();
+var gulp = require("gulp");
+var sass = require("gulp-sass")(require('sass'));;
+var cssnano = require("gulp-cssnano");
+var autoprefixer = require('gulp-autoprefixer');
+var concat = require("gulp-concat");
+var uglify = require("gulp-uglify");
+var rename = require("gulp-rename");
+var browserSync = require('browser-sync').create();
 
-// Шляхи до файлів та директорій
-const paths = {
-  styles: 'src/scss/**/*.scss',
-  scripts: 'src/js/**/*.js',
-  html: 'src/*.html',
-};
+gulp.task("html", function () {
+    return gulp.src("app/*.html")
+        .pipe(gulp.dest("dist"))
+        .pipe(browserSync.stream());
+});
 
-// Таск для компіляції Sass у CSS, автопрефіксінга, мініфікації та збереження в папці 'dist'
-gulp.task('styles', () => {
-  return gulp
-    .src(paths.styles)
-    .pipe(sass())
-    .pipe(autoprefixer())
-    .pipe(cleanCSS())
-    .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest('dist/css'))
+gulp.task("css", function () {
+    return gulp.src("app/css/*.css")
+        .pipe(concat('styles.css'))
+        .pipe(cssnano())
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(gulp.dest("dist/css"))
+        .pipe(browserSync.stream());
+});
+
+gulp.task("sass", function () {
+    return gulp.src("app/sass/*.scss")
+        .pipe(concat('styles.scss')) // combine multiple files into one
+        .pipe(sass())
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
+        .pipe(cssnano()) // to run compressed css file
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(gulp.dest("dist/css"))
+        .pipe(browserSync.stream());
+});
+
+gulp.task("scripts", function () {
+    return gulp.src("app/js/*.js")
+        .pipe(concat('scripts.js'))
+        .pipe(uglify())
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(gulp.dest("dist/js"))
+        .pipe(browserSync.stream());
+});
+
+gulp.task('images', function() {
+  return gulp.src("app/img/*.jpg")
+    .pipe(gulp.dest('dist/images'))
     .pipe(browserSync.stream());
+})
+
+gulp.task("watch", function () {
+    browserSync.init({
+        server: {
+            baseDir: ["./app", "./dist"]
+        }
+    });
+    gulp.watch("app/*.html", gulp.series("html"));
+    gulp.watch("app/js/*.js", gulp.series("scripts"));
+    gulp.watch("app/sass/*.sass", gulp.series("sass"));
+    gulp.watch("app/img/*.{jpg,jpeg,png,gif}", gulp.series("images"))
+    gulp.watch("dist").on('change', browserSync.reload);
 });
 
-// Таск для мініфікації та збереження JavaScript файлів в папці 'dist'
-gulp.task('scripts', () => {
-  return gulp
-    .src(paths.scripts)
-    .pipe(uglify())
-    .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest('dist/js'))
-    .pipe(browserSync.stream());
-});
-
-// Таск для видалення попередньої збірки
-gulp.task('clean', () => {
-  return del(['dist']);
-});
-
-// Таск для відстежування змін у файлах та автоматичного оновлення сторінок за допомогою Browser Sync
-gulp.task('watch', () => {
-  browserSync.init({
-    server: {
-      baseDir: './',
-    },
-  });
-
-  gulp.watch(paths.styles, gulp.series('styles'));
-  gulp.watch(paths.scripts, gulp.series('scripts'));
-  gulp.watch(paths.html).on('change', browserSync.reload);
-});
-
-// Таск для збірки проекту (запускається командою 'gulp build')
-gulp.task('build', gulp.series('clean', 'styles', 'scripts'));
-
-// Таск за замовчуванням (запускається командою 'gulp')
-gulp.task('default', gulp.series('build', 'watch'));
+gulp.task("default", gulp.series("html", "sass", "css",'images', "scripts", "watch"));
