@@ -51,6 +51,14 @@ gulp.task('images', function() {
     .pipe(browserSync.stream());
 })
 
+gulp.task('browser-sync', function() {
+    browserSync.init({
+        server: {
+            baseDir: "./dist"
+        }
+        });
+    });
+
 gulp.task("watch", function () {
     browserSync.init({
         server: {
@@ -64,4 +72,4 @@ gulp.task("watch", function () {
     gulp.watch("dist").on('change', browserSync.reload);
 });
 
-gulp.task("default", gulp.series("html", "sass", "css",'images', "scripts", "watch"));
+gulp.task("default", gulp.series("html", "sass", "css",'images', "scripts","browser-sync", "watch"));
