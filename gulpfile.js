@@ -24,7 +24,7 @@ gulp.task("css", function () {
 
 gulp.task("sass", function () {
     return gulp.src("app/sass/*.scss")
-        .pipe(concat('styles.scss')) // combine multiple files into one
+        .pipe(concat('app.scss')) // combine multiple files into one
         .pipe(sass())
         .pipe(autoprefixer({
             browsers: ['last 2 versions'],
