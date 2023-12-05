@@ -1,24 +1,159 @@
-.sidebar {
+body {
+    background-color: #f0f3f4;
+    overflow-x:hidden;
+    margin: 0;
+    padding: 0;
+}
+.sidebar-left {
     height: 100%;
-    width: 250px;
+    width: 200px;
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #333;
+    background-color: #1B2B35;
     overflow-x: hidden;
-    padding-top: 60px;
+    padding-top: 10px;
     color: #fff;
 }
-
-.sidebar a {
-    padding: 15px 25px;
-    text-decoration: none;
-    font-size: 20px;
-    color: #fff;
+.sidebar-left a {
     display: block;
-}
-
-.content {
-    margin-left: 250px;
+    text-decoration: none;
     padding: 15px;
+    line-height: 5px;
+    font-size: 15px;
+    font-weight: 400;
+    color: #c1daec;
+    font-family: "Lato";
+}
+.sidebar-right {
+    height: 100%;
+    width: 240px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-x: hidden;
+    padding-top: 10px;
+    color: #000;
+}
+.sidebar-right a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px;
+    line-height: 30px;
+    font-size: 15px;
+    color: #1B2B35;
+    font-family: "Lato";
+    margin-top: 50px;
+}
+.content {
+    margin-left: 200px;
+    padding: 15px;
+}
+.custom-search-box {
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    padding: 5px 10px;
+}
+.custom-search-box input[type="text"] {
+    margin-top: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 1%;
+}
+.nav_elements {
+    margin-left: 50px;
+}
+.nav-link {
+    min-width: 80px;
+}
+.rectangles{
+    line-height: 100px;
+    color: #fff;
+    font-size: 25px;
+    font-family: "Lato";
+    text-align: center;
+}
+.rectangles a{
+    display: inline-block;
+    margin-inline: 5px;
+}
+.rect1{
+    width: 200px;
+    height: 100px;
+    border-radius: 15px;
+    background-color: #00bcd4;
+}
+.rect2{
+    width: 200px;
+    height: 100px;
+    border-radius: 15px;
+    background-color: #8bc34a;
+}
+.rect3{
+    width: 200px;
+    height: 100px;
+    border-radius: 15px;
+    background-color: #1d89cf;
+}
+.rect4{
+    width: 200px;
+    height: 100px;
+    border-radius: 15px;
+    background-color: #a767dd;
+}
+.rect5{
+    width: 200px;
+    height: 100px;
+    border-radius: 15px;
+    background-color: #ffc700;
+}
+#sidebar_section{
+    padding: 18px;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 10px;
+    color: #7792a5;
+    font-family: "Lato";
+}
+#nav-icon{
+    margin-left:-25px;
+    padding: -35px;
+}
+#first_tab{
+    margin-left:-20px;
+}
+#last_tab{
+    margin-right:-10px;
+}
+#rect{
+    padding: 5px;
+}
+#langsel{
+    display: block;
+    margin-left: 250px;
+    width: 200px;
+    margin-right: 10px;
+}
+#search_width{
+    width: 250px;
+}
+#icon{
+    margin-inline: 10px;
+}
+#sidebar-left_icons{
+    margin-right: 10px;
+}
+.container{
+    display: inline-flex;
+}
+.container a{
+    width: auto;
+    height: auto;
+    background-color: #fff;
+    margin-left: 200px;
 }

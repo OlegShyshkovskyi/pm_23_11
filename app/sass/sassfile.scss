@@ -1,6 +1,4 @@
-// Variable overrides first
 $primary: white;
 $enable-shadows: true;
 $prefix: "mo-";
-// Then import Bootstrap
 @import "./../../node_modules/bootstrap/scss/bootstrap";
