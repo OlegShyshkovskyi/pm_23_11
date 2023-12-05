@@ -2,3 +2,7 @@ $primary: white;
 $enable-shadows: true;
 $prefix: "mo-";
 @import "./../../node_modules/bootstrap/scss/bootstrap";
+@font-face {
+    font-family: 'Lato';
+    src: url('/fonts/latobold.ttf');
+}

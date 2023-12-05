@@ -5,14 +5,13 @@
     <title>CodeBox</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/styles.min.css">
-    <script src="./js/scripts.min.js"></script>
 </head>
 <body>
     <div class="sidebar-right">
         <a href="#item1" id = "sidebar-right_tabs"style="border-bottom: 3px solid #555555;"><img src="images/people.png" alt="people"width="30" ></a>
         <a href="#item2" id = "sidebar-right_tabs"style=><img src="images/clouds.png" alt="clouds"width="30"></a>
         <a href="#item3" id = "sidebar-right_tabs"style=><img src="images/setting.png" alt="setting"width="30"></a>
-        <div class="right_section">
+        <div class="grey_section">
             <a><h6>Who to follow</h6></a>
             <a><img src="images/avatar-round.png" alt="avatar" width="35" height="35" id="sidebar-right_icons"><h6 style="display: inline-flex; opacity: 90%;">Hoang Thai</h6></a>
             <a><img src="images/avatar-round.png" alt="avatar" width="35" height="35"id="sidebar-right_icons"><h6 style="display: inline-flex; opacity: 90%;">Mogen Polish</h6></a>
@@ -106,7 +105,7 @@
                 <a href="#pages"><img src="images/icon3.png" alt="icon3"id = "sidebar-left_icons"> Calendar</a>
                 <a href="#apps"><img src="images/icon4.png" alt="icon4"id = "sidebar-left_icons"> Pages</a>
                 <a href="#apps"><img src="images/icon5.png" alt="icon5"id = "sidebar-left_icons"> Apps</a>
-            <div class="left_section">
+            <div class="grey-blue_section">
                 <a id = "sidebar_section" href="#components"> Components</a>
                 <a href="#layouts"><img src="images/icon6.png" alt="icon6" id = "sidebar-left_icons"> Layouts</a>
                 <a href="#UI_elements"><img src="images/icon7.png" alt="icon7"id = "sidebar-left_icons"> UI Elements</a>
@@ -127,13 +126,37 @@
                 <a><div class="rect4">+56%</div></a>
                 <a><div class="rect5">$12,500</div></a>
             </div>
+
+            <div>
+                <div class="d-flex justify-content-between" style="margin-top: 10px; margin-bottom: 10px;">
+                    <div class="bg-white"><canvas id="Donut" aria-label="chart" height="300" width="300"></canvas></div>
+                    <div class="bg-white"><canvas id="wavyChart" width="555" height="200"></canvas></div>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <div class="bg-white">
+                        <h6>Members</h6>
+                        <div class="grey_section" style="display: block;">
+                            <div><img src="images/avatar-round.png" alt="avatar" width="35" height="35" id="sidebar-right_icons"><h6 style="display: inline-flex; opacity: 90%;">Hoang Thai</h6></div>
+                            <div><img src="images/avatar-round.png" alt="avatar" width="35" height="35"id="sidebar-right_icons"><h6 style="display: inline-flex; opacity: 90%;">Mogen Polish</h6></div>
+                            <div><img src="images/avatar-round.png" alt="avatar" width="35" height="35"id="sidebar-right_icons"><h6 style="display: inline-flex; opacity: 90%;">Mogen Polish</h6></div>
+                            <div><img src="images/avatar-round.png" alt="avatar" width="35" height="35"id="sidebar-right_icons"><h6 style="display: inline-flex; opacity: 90%;">Mogen Polish</h6></div>
+                            <div><img src="images/avatar-round.png" alt="avatar" width="35" height="35"id="sidebar-right_icons"><h6 style="display: inline-flex; opacity: 90%;">Mogen Polish</h6></div>
+                        </div>
+                    </div>
+                    <div class="bg-white" style="display: block;">
+                        <h6>Tasks</h6>
+                    </div>
+                    <div class="bg-white"style="display: block;">
+                        <h6>Activity</h6>
+                    </div>
+                </div>
+            </div>        
         </div>
     </div>
-    <div class="container">
-        <a><canvas id="Donut" aria-label="chart" height="300" width="300"></canvas></a>
-        <a><canvas id="wavyChart" width="555" height="200"></canvas></a>
-        <!-- <a><h6>Members</h6></a> -->
-    </div>
    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+   <script src="./js/scripts.min.js"></script>
+
 </body>
 </html>

@@ -51,6 +51,12 @@ gulp.task('images', function() {
     .pipe(browserSync.stream());
 })
 
+gulp.task('fonts', function() {
+    return gulp.src("app/fonts/*")
+      .pipe(gulp.dest('dist/fonts'))
+      .pipe(browserSync.stream());
+  })
+
 gulp.task('browser-sync', function() {
     browserSync.init({
         server: {
@@ -72,4 +78,4 @@ gulp.task("watch", function () {
     gulp.watch("dist").on('change', browserSync.reload);
 });
 
-gulp.task("default", gulp.series("html", "sass", "css",'images', "scripts","browser-sync", "watch"));
+gulp.task("default", gulp.series("html", "sass", "css",'images', "scripts", "fonts", "browser-sync", "watch"));

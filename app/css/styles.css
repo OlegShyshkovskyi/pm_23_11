@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Lato';
+    src: url('/fonts/latobold.ttf');
+}
+
 body {
     background-color: #f0f3f4;
     overflow-x:hidden;
@@ -122,9 +127,6 @@ body {
 #nav-icon{
     margin-left:-25px;
 }
-#rect{
-    padding: 5px;
-}
 #search_width{
     width: 250px;
 }
@@ -150,11 +152,11 @@ body {
     background-color: #fff;
     margin-left: 200px;
 }
-.left_section{
+.blue-grey_section{
     border-top: 1px solid #243a49;
     border-bottom: 1px solid #243a49;
 }
-.right_section{
+.grey_section{
     border-top: 2px solid #e1e1e1;
     border-bottom: 2px solid #e1e1e1;
 }
