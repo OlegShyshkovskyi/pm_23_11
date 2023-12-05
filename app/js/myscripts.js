@@ -6,7 +6,7 @@ window.onload = () => {
             labels: ["United states", "Poland", "Italy", "Germany", "Other"],
             datasets: [{
                 label: "Analysis",
-                data: [20, 40, 13, 35, 20, 38],
+                data: [20, 40, 13, 35, 20],
                 backgroundColor: ["#3993bb", "#65b5c2", "#2e7bad", "#23649e", "#63daed"],
                 hoverOffset: 5
             }],
