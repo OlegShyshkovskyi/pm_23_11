@@ -1,9 +1,8 @@
 @font-face {
     font-family: 'Lato';
-    src: url('/fonts/latobold.ttf');
+    src: url('/fonts/Lato-Light.ttf');
 }
-
-body {
+body{
     background-color: #f0f3f4;
     overflow-x:hidden;
     margin: 0;
@@ -17,18 +16,19 @@ body {
     left: 0;
     background-color: #1B2B35;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    overflow-y: hidden;
-    padding-top: 10px;
+    overflow: hidden;
+    padding: 0;
     color: #fff;
 }
 .sidebar-left a {
     display: block;
     text-decoration: none;
-    padding: 12px;
+    padding: 10px;
     line-height: 5px;
-    font-size: 15px;
+    font-size: 14px;
     color: #c1daec;
     font-family: "Lato";
+    width: 200px;
 }
 .sidebar-right {
     height: 100%;
@@ -39,23 +39,20 @@ body {
     background-color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     overflow-y: hidden;
-    padding-top: 10px;
     color: #000;
 }
 .sidebar-right a {
     display: block;
     text-decoration: none;
-    padding: 12px;
-    line-height: 5px;
-    font-size: 15px;
+    padding: 8px;
+    line-height: 16px;
+    font-size: 16px;
     color: #000;
+    font-family: "Lato";
 }
-.content {
-    margin-left: 200px;
-    padding: 15px;
-}
+
 .custom-search-box {
-    background-color: #f5f5f5;
+    background-color: #f3f3f3;
     border: 1px solid #ccc;
     border-radius: 25px;
     padding-top: 4px;
@@ -70,9 +67,6 @@ body {
     background: transparent;
     width: 0.5%;
 }
-.nav_elements {
-    margin-left: 50px;
-}
 .nav-link {
     min-width: 80px;
 }
@@ -80,46 +74,19 @@ body {
     line-height: 100px;
     color: #fff;
     font-size: 25px;
-    font-family: "Lato";
     text-align: center;
+    margin-top: 10px;
+    font:bold;
 }
 .rectangles a{
     display: inline-block;
-    margin-inline: 5px;
-}
-.rect1{
     width: 200px;
     height: 100px;
-    border-radius: 15px;
-    background-color: #00bcd4;
-}
-.rect2{
-    width: 200px;
-    height: 100px;
-    border-radius: 15px;
-    background-color: #8bc34a;
-}
-.rect3{
-    width: 200px;
-    height: 100px;
-    border-radius: 15px;
-    background-color: #1d89cf;
-}
-.rect4{
-    width: 200px;
-    height: 100px;
-    border-radius: 15px;
-    background-color: #a767dd;
-}
-.rect5{
-    width: 200px;
-    height: 100px;
-    border-radius: 15px;
-    background-color: #ffc700;
 }
 #sidebar_section{
-    padding: 18px;
-    font-size: 15px;
+    padding: 15px;
+    padding-bottom: 10px;
+    font-size: 14px;
     line-height: 10px;
     color: #7792a5;
     font-family: "Lato";
@@ -131,7 +98,7 @@ body {
     width: 250px;
 }
 #sidebar-right_tabs{
-    margin-top: 50px;
+    margin-top: 60px;
     display: inline-block;
     padding: 22px;
     padding-bottom: 25px;
@@ -143,15 +110,6 @@ body {
 #sidebar-left_icons{
     margin-right: 10px;
 }
-.container{
-    display: inline-flex;
-}
-.container a{
-    width: auto;
-    height: auto;
-    background-color: #fff;
-    margin-left: 200px;
-}
 .blue-grey_section{
     border-top: 1px solid #243a49;
     border-bottom: 1px solid #243a49;
@@ -160,3 +118,30 @@ body {
     border-top: 2px solid #e1e1e1;
     border-bottom: 2px solid #e1e1e1;
 }
+.content {
+    width: 71.2%;
+    margin-left: 200px;
+}
+.circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px; 
+    height: 30px; 
+    border-radius: 50%; 
+    margin: 5px;
+  }
+.icon {
+    font-size: 24px;
+    color: white;
+  }
+.btn-custom {
+    height: 40px;
+    background-color: #1B2B35;
+    text-align: justify;
+    transition: 0.8s;
+  }
+  
+  .btn-custom.checked {
+    background-color: #141e26;
+  }

@@ -1,4 +1,9 @@
 window.onload = () => {
+    $(document).ready(function() {
+        $(".btn-custom").click(function() {
+          $(this).toggleClass("checked");
+        });
+      });
     var chrt = document.getElementById("Donut").getContext("2d");
     var chartId = new Chart(chrt, {
         type: 'doughnut',
@@ -13,6 +18,11 @@ window.onload = () => {
         },
         options: {
             responsive: false,
+            plugins: {
+                legend: {
+                    position: 'right'
+                }
+            }    
         },
     });
     var ctx = document.getElementById('wavyChart').getContext('2d');
@@ -56,11 +66,81 @@ window.onload = () => {
                     }
                 }
             }]
-        }
+        },
     };
+    
     var wavyChart = new Chart(ctx, {
         type: 'line',
         data: data,
-        options: options
+        options: options,
+    });
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var data1 = [];
+    for (let i = 0; i < 100; i++) {
+        data1.push(Math.floor(Math.random()* (80 - 58 + 1)) + 58);
+    }
+    var data2 = [];
+    for (let i = 0; i < 100; i++) {
+        data2.push(Math.floor(Math.random()* (46 - 22 + 1)) + 22);
+    }
+    var data3 = [];
+    for (let i = 0; i < 100; i++) {
+        data3.push(Math.floor(Math.random()* 20));
+    }
+    var chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: data1.map((_, index) => `${index + 1}`),
+            datasets: [
+                {
+                    label: 'Edgy Mountains1',
+                    data: data3,
+                    borderColor: "#8db987",
+                    borderWidth: 2,
+                    lineTension: 0.2,
+                    pointRadius: 0,
+                    fill: true,
+                    backgroundColor: "#8db987",
+                },
+                {
+                    label: 'Edgy Mountains2',
+                    data: data2,
+                    borderColor: "#90abe3",
+                    borderWidth: 2,
+                    lineTension: 0.2,
+                    pointRadius: 0,
+                    fill: true,
+                    backgroundColor: "#90abe3",
+                },
+                {
+                    label: 'Edgy Mountains3',
+                    data: data1,
+                    borderColor: "#dcc2f1",
+                    lineTension: 0.2,
+                    pointRadius: 0,
+                    fill: true,
+                    backgroundColor: "#dcc2f1",
+                }
+            ]
+        },
+        options: {
+            responsive: false,
+            maintainAspectRatio: false,
+            scales: {
+                x: {
+                    grid: {
+                        display: false
+                    },
+                    ticks: {
+                        display: false
+                    }
+                },
+                y: {
+                    grid: {
+                        drawBorder: false
+                    }
+                }
+            }
+        }
     });
 };
