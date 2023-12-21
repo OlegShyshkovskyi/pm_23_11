@@ -1,8 +1,8 @@
 @font-face {
     font-family: 'Lato';
-    src: url('/fonts/Lato-Light.ttf');
+    src: url('/fonts/latobold.ttf');
 }
-body{
+body {
     background-color: #f0f3f4;
     overflow-x:hidden;
     margin: 0;
@@ -76,7 +76,7 @@ body{
     font-size: 25px;
     text-align: center;
     margin-top: 10px;
-    font:bold;
+    font-family: 'Lato';
 }
 .rectangles a{
     display: inline-block;
@@ -144,4 +144,7 @@ body{
   
   .btn-custom.checked {
     background-color: #141e26;
+  }
+  #responsive_table{
+    padding: 15px;
   }

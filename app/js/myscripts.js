@@ -1,4 +1,55 @@
 window.onload = () => {
+    function updateChartData(timePeriod) {
+        // Logic to fetch data for week, month, or year based on the timePeriod parameter
+        var newData = getChartDataForTimePeriod(timePeriod); // Replace this with your data retrieval logic
+    
+        // Update the chart data and redraw
+        wavyChart.data.labels = newData.labels;
+        wavyChart.data.datasets[0].data = newData.dataMinStatistics;
+        wavyChart.data.datasets[1].data = newData.dataMaxStatistics;
+        wavyChart.update();
+    }
+    
+    // Event listeners for the buttons
+    document.getElementById('weekBtn').addEventListener('click', function() {
+        updateChartData('week');
+    });
+    
+    document.getElementById('monthBtn').addEventListener('click', function() {
+        updateChartData('month');
+    });
+    
+    document.getElementById('yearBtn').addEventListener('click', function() {
+        updateChartData('year');
+    });
+    
+    // Example function to fetch data based on time period
+    function getChartDataForTimePeriod(timePeriod) {
+        // Placeholder data for demonstration purposes
+        var labels, dataMinStatistics, dataMaxStatistics;
+    
+        // Replace with your logic to fetch data for week, month, or year
+        if (timePeriod === 'week') {
+            labels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+            dataMinStatistics = [1, 1.5, 8.5, 6, 27.5, 7.5, 14];
+            dataMaxStatistics = [2, 3, 17, 12, 55, 15, 28];
+        } else if (timePeriod === 'month') {
+            labels = ['Week 1', 'Week 2', 'Week 3', 'Week 4'];
+            dataMinStatistics = [5, 7, 10, 8];
+            dataMaxStatistics = [8, 12, 15, 11];
+        } else if (timePeriod === 'year') {
+            labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            dataMinStatistics = [10, 15, 20, 18, 25, 30, 28, 35, 40, 38, 45, 50];
+            dataMaxStatistics = [15, 20, 25, 23, 30, 35, 33, 40, 45, 43, 50, 55];
+        }
+    
+        return {
+            labels: labels,
+            dataMinStatistics: dataMinStatistics,
+            dataMaxStatistics: dataMaxStatistics
+        };
+    }
+    
     $(document).ready(function() {
         $(".btn-custom").click(function() {
           $(this).toggleClass("checked");
@@ -143,4 +194,5 @@ window.onload = () => {
             }
         }
     });
+
 };
